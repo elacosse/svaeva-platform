@@ -87,6 +87,8 @@ Now as the final step we can deploy our servers and enjoy our bot!
 docker-compose -f docker-compose-multimodal-telegram-bot.yaml up -d
 ```
 
+Note: use the ```--build``` options if any updates occured.
+
 ## 🎯 What's next
 
 Well, that can be up to you 💪🏻. 

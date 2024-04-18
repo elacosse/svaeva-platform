@@ -29,7 +29,7 @@ services:
     build:
       context: ./
       dockerfile: svaeva-manager/Dockerfile
-    command: streamlit run svaeva-manager/server.py --server.port 8501
+    command: streamlit run svaeva_manager/server.py --server.port 8501
     ports:
       - "8501:8501"
     depends_on:
@@ -59,14 +59,14 @@ services:
       - "redis-stack"
       - "prompt-manager"
       - "langserve-app"
-    # networks:
-    # - deployment_network
+      # networks:
+      # - deployment_network
 
   scheduler:
     build:
       context: ./
       dockerfile: svaeva-schedulers/Dockerfile
-    command: uvicorn schedulers.consonancia.server:app --host 0.0.0.0 --port 7999 --reload
+    command: uvicorn svaeva_schedulers.consonancia.server:app --host 0.0.0.0 --port 7999 --reload
     ports:
       - "7999:7999"
     depends_on:

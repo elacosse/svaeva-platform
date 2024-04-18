@@ -626,3 +626,10 @@ notebooks/
 
 # streamlit secrets
 secrets.toml
+
+# svaeva
+svaeva-evaluation/
+svaeva-handlers/
+svaeva-langserve-app/
+svaeva-manager/
+svaeva-schedulers/
