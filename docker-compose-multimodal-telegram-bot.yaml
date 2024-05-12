@@ -1,7 +1,7 @@
 version: "3"
 services:
   redis-stack:
-    image: redis/redis-stack:latest
+    image: redis/redis-stack:7.2.0-v10
     ports:
       - "6379:6379"
       - "8001:8001"
@@ -50,15 +50,28 @@ services:
     # networks:
     #   - deployment_network
 
-  handler-telegram:
+  handler-telegram-a:
     build:
       context: ./
-      dockerfile: svaeva-handlers/telegram/Dockerfile
+      dockerfile: svaeva-handlers/telegram-a/Dockerfile
     command: poetry run python asyncio/server.py
     depends_on:
       - "redis-stack"
       - "prompt-manager"
       - "langserve-app"
+      # networks:
+      # - deployment_network
+
+  handler-telegram-b:
+    build:
+      context: ./
+      dockerfile: svaeva-handlers/telegram-b/Dockerfile
+    command: poetry run python asyncio/server.py
+    depends_on:
+      - "redis-stack"
+      - "prompt-manager"
+      - "langserve-app"
+      - "handler-telegram-a"
       # networks:
       # - deployment_network
 

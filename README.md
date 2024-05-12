@@ -71,6 +71,10 @@ TELEGRAM_BOT_TOKEN=<YOUR TELEGRRAM BOT TOKEN> # the bot token you got from step 
 
 OPENAI_API_KEY=<YOUR OPENAI API KEY>
 DEEPGRAM_API_KEY=<YOUR DEEPGRAM API KEY>
+
+PLATFORM_ID = <Your platform id, e.g., telegram>
+GROUP_ID = <Your group id, e.g., metamersion-test-1>
+CONVERSATION_ID = <Your conversation id, e.g., consonancia-1>
 ```
 
 #### Step 3: Define environment variables for the Streamlit Prompt Change Server.
