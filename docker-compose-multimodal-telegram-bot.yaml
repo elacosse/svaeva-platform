@@ -25,7 +25,7 @@ services:
     # networks:
     #   - deployment_network
 
-  prompt-manager:
+  svaeva-manager:
     build:
       context: ./
       dockerfile: svaeva-manager/Dockerfile
@@ -46,7 +46,6 @@ services:
       - "8000:8000"
     depends_on:
       - "redis-stack"
-      - "prompt-manager"
     # networks:
     #   - deployment_network
 
@@ -57,7 +56,6 @@ services:
     command: poetry run python asyncio/server.py
     depends_on:
       - "redis-stack"
-      - "prompt-manager"
       - "langserve-app"
       # networks:
       # - deployment_network
@@ -69,7 +67,6 @@ services:
     command: poetry run python asyncio/server.py
     depends_on:
       - "redis-stack"
-      - "prompt-manager"
       - "langserve-app"
       - "handler-telegram-a"
       # networks:

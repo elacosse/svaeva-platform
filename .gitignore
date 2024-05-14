@@ -633,3 +633,5 @@ svaeva-handlers/
 svaeva-langserve-app/
 svaeva-manager/
 svaeva-schedulers/
+
+copy_zip.sh
