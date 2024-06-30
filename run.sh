@@ -4,7 +4,7 @@ if [ -x "$(command -v docker)" ]; then
     echo "Docker is already installed"
     echo "Building and running the Docker container"
     sudo docker-compose -f docker-compose-multimodal-telegram-bot.yaml stop
-    sudo docker-compose -f docker-compose-multimodal-telegram-bot.yaml up -d
+    sudo docker-compose -f docker-compose-multimodal-telegram-bot.yaml up -d --build
 else
     # Update the apt package index
     sudo apt-get update
